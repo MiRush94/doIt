@@ -1,4 +1,7 @@
 'use strict'
+const Database = use('Database')
+const Note = use('App/Model/Note')
+const Validator = use('Validator')
 
 class HomeController {
     * index(request, response){
@@ -6,11 +9,19 @@ class HomeController {
     }
 
     * notes(request, response){
-        yield response.sendView('notes');
+        const notes = yield Note.all();
+
+        yield response.sendView('notes', {
+            notes: notes.toJSON()
+        });
     }
 
     * todos(request, response){
-        yield response.sendView('todos');
+        const todos = yield Todo.all();
+
+        yield response.sendView('todos',{
+            todos: todos.toJSON()
+        });
     }
 
     * loginSignUp(request, response){
