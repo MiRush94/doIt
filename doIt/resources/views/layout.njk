@@ -33,8 +33,18 @@
       <ul class="nav navbar-nav">
         {% if currentUser %}
         <li><a href="/">Home</a></li>
-        <li><a href="/notes">Notes</a></li>
-        <li><a href="/todos">Todos</a></li>
+        <li class="dropdown">
+          <a href="/notes" role="button" aria-expanded="false">Notes <span class="caret"></span></a>
+            <ul class="dropdown-menu" role="menu">
+              <li><a href="/createNote"><i class="fa fa-btn fa-plus padding-right-10"></i>Add Note</a></li>
+            </ul>  
+          </li>
+        <li class="dropdown">
+          <a href="/todos" role="button" aria-expanded="false">Todos <span class="caret"></span></a>
+          <ul class="dropdown-menu" role="menu">
+              <li><a href="/createTodo"><i class="fa fa-btn fa-plus padding-right-10"></i>Add Todo</a></li>
+            </ul>
+          </li>
         {% endif %}
       </ul>
       <ul class="nav navbar-nav navbar-right">

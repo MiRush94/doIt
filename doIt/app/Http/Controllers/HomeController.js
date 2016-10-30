@@ -24,10 +24,11 @@ class HomeController {
 
         for(let category of categories){
             const todos = yield category.todos().fetch();
-            category.todos = todos.toJSON()
+            category.allTodos = todos.toJSON()
         }
+
         yield response.sendView('todos',{
-            categories: categories.toJSON() 
+            categories: categories.toJSON()
         })
     }
 

@@ -1,7 +1,7 @@
 'use strict'
 const Database = use('Database')
 const Category = use('App/Model/Category')
-const Note = use('App/Model/Todo')
+const Todo = use('App/Model/Todo')
 const Validator = use('Validator')
 
 class TodosController {
@@ -12,7 +12,7 @@ class TodosController {
         });
     }
 
-    * doTodoCreate(request, response){
+    * doCreate(request, response){
         const todoData = request.except('_csrf');
 
         const rules = {
@@ -33,6 +33,26 @@ class TodosController {
         todoData.user_id = 1;
         const todo = yield Todo.create(todoData);
         response.redirect('/todos');
+    }
+
+    * addCategory(request,response){
+        const categoryData = request.except('_csrf');
+        const rules = {
+            name:'required'
+        }
+        const validation = yield Validator.validateAll(categoryData, rules);
+
+        if(validation.fails()){
+            yield request
+                .withAll()
+                .andWith({errors: validation.messages()})
+                .flash()
+            response.redirect('back');
+            return
+        }
+
+        const category = yield Category.create(categoryData);
+        response.redirect('/createTodo');
     }
 }
 

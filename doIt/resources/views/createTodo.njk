@@ -5,5 +5,70 @@
         {% if not currentUser %}
         <div class="text-center"><h1>Please login to get started</h1></div>
         {% else %}
+        <h2> New Todo </h2>
+        {% if old('errors') %}
+        <div class="panel panel-danger">
+            <div class="panel-heading">Errors</div>
+            <div class="panel-body">
+                <ul>
+                    {% for error in old('errors') %}
+                    <li>{{ error.message }}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
         {% endif %}
+        <div class="col-xs-12">
+            <p>Add a new category name and press the "Add Category" button, if no matching category exists in the dropdown below.</p>
+            <form class="form-horizontal" role="form" method="POST" action="/addCategory">
+                {{ csrfField }}
+                <fieldset>
+                    <div class="form-group">
+                        <label for="name" class="col-xs-2 control-label">Category Name</label>
+                        <div class="col-xs-6">
+                            <div class="input-group">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Category name" value="{{old('name')}}">
+                                <span class="input-group-btn">
+                                    <button class="btn btn-default" type="submit">Add Category</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-xs-12">
+            <form class="form-horizontal" role="form" method="POST" action="/createTodo">
+                {{ csrfField }}
+                <fieldset>
+                    <div class="form-group">
+                    <label for="title"  class="col-xs-2 control-label">Todo Title</label>
+                        <div class="col-xs-6">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Todo title" value="{{old('title')}}">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                    <label for="category_id" class="col-xs-2 control-label">Category</label>
+                        <div class="col-xs-6">
+                            <select class="form-control" id="category_id" name="category_id">
+                            {% for category in categories %}
+                            <option value="{{ category.id }}" {% if category.id == old('category_id') %} selected {% endif %}>
+                                {{ category.name}}</option>
+                            {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-xs-10 col-sm-10 col-md-10 col-lg-10 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2">
+                            <button type="reset" class="btn btn-default">Cancel</button>
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </div>
+                    <!--<input type="text" id="user_id" name="user_id" hidden/>-->
+                </fieldset>
+            </form>
+        </div>
+        {% endif %}
+        </div>
+    </div>
 {% endblock %}
