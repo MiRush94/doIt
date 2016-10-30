@@ -1,0 +1,46 @@
+{% extends "layout"%}
+{% block content %}
+<div id="wrapper">
+    <div class="container">
+        <h2> New Note </h2>
+{% if old('errors') %}
+<div class="panel panel-danger">
+    <div class="panel-heading">Errors</div>
+    <div class="panel-body">
+            <ul>
+                {% for error in old('errors') %}
+                <li>{{ error.message }}</li>
+                {% endfor %}
+            </ul>
+    </div>
+</div>
+{% endif %}
+        <form class="form-horizontal" method="post">
+            {{ csrfField }}
+            <fieldset>
+                <div class="form-group">
+                <label for="name"  class="col-lg-2 control-label">Note Title</label>
+                <div class="col-lg-10">
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Note name" value="{{old('name')}}">
+                </div>
+                </div>
+                <div class="form-group">
+                <label for="content" class="col-lg-2 control-label">Content</label>
+                <div class="col-lg-10">
+                    <textarea class="form-control" rows="10" id="content" name="content">{{old('content')}}</textarea>
+                </div>
+                </div>
+                <div class="form-group">
+                <div class="col-lg-10 col-lg-offset-2">
+                    <button type="reset" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+                </div>
+                <!--<input type="text" id="user_id" name="user_id" hidden/>-->
+            </fieldset>
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

@@ -1,1 +1,35 @@
 {% extends "layout" %}
+
+{% block content%}
+<div id="wrapper">
+    <div class="container">
+        {% if not currentUser %}
+        <div class="text-center">Please login to get started</div>
+        {% else %}
+        <div class="row">
+            {% for category in categories %}
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">{{ category.name }}</div>
+                        <!-- List group -->
+                        <div class="panel-body" style="max-height:150px; min-height:150px; overflow-y: scroll;">
+                            {% for todo in category.todos %}
+                                <li style="list-style:none;"><a href="#">{{ todo.title }}</a></li>
+                            {% endfor %}
+                        </div>
+                        <div class="panel-footer">
+                            <!--<div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">-->
+                                <!--<div class="btn-group">-->
+                                    <button type="submit" class="btn btn-danger">Delete<i class="glyphicon glyphicon-trash" style="padding-left:10px"></i></button>
+                                    <button type="submit" class="btn btn-info pull-right">Edit<i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i></button>
+                                <!--</div>-->
+                            <!--</div>-->
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

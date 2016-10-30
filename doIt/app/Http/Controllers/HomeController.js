@@ -1,6 +1,9 @@
 'use strict'
 const Database = use('Database')
 const Note = use('App/Model/Note')
+const Todo = use('App/Model/Todo')
+const Category = use('App/Model/Category')
+const User = use('App/Model/User')
 const Validator = use('Validator')
 
 class HomeController {
@@ -17,11 +20,15 @@ class HomeController {
     }
 
     * todos(request, response){
-        const todos = yield Todo.all();
+        const categories = yield Category.all();
 
+        for(let category of categories){
+            const todos = yield category.todos().fetch();
+            category.todos = todos.toJSON()
+        }
         yield response.sendView('todos',{
-            todos: todos.toJSON()
-        });
+            categories: categories.toJSON() 
+        })
     }
 
     * loginSignUp(request, response){

@@ -7,7 +7,7 @@ const Validator = use('Validator')
 class TodosController {
     * create(request, response){
         const categories = yield Category.all()
-        yield response.sendView('recipeCreate', {
+        yield response.sendView('createTodo', {
             categories: categories.toJSON()
         });
     }
