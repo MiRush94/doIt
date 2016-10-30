@@ -2,6 +2,9 @@
 {% block content %}
 <div id="wrapper">
     <div class="container">
+        {% if not currentUser %}
+        <div class="text-center"><h1>Please login to get started</h1></div>
+        {% else %}
         <form class="form-horizontal" action="" role="form" method="post">
             {{ csrfField }}
             <fieldset>
@@ -26,6 +29,7 @@
                 <!--<input type="text" id="user_id" name="user_id" hidden/>-->
             </fieldset>
         </form>
+        {% endif %}
     </div>
 </div>
 {% endblock %}

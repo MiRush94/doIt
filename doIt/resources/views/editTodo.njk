@@ -1,0 +1,9 @@
+{% extends "layout"%}
+{% block content %}
+<div id="wrapper">
+    <div class="container">
+        {% if not currentUser %}
+        <div class="text-center"><h1>Please login to get started</h1></div>
+        {% else %}
+        {% endif %}
+{% endblock %}

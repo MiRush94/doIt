@@ -2,6 +2,9 @@
 {% block content %}
 <div id="wrapper">
     <div class="container">
+        {% if not currentUser %}
+        <div class="text-center"><h1>Please login to get started</h1></div>
+        {% else %}
         <div class="col-xs-12">
             <h2> Note name : {{note.name}} </h2>
             <h3>Note content</h3>
@@ -13,6 +16,7 @@
             <a href="/editNote/{{note.id}}"><button class="btn btn-info text-center" style="min-width:10%;">
                 <i class="glyphicon glyphicon-edit" style="padding-right:10px;"></i>Edit</button></a>
         </div>
+        {% endif %}
     </div>
 </div>
 {% endblock %}
