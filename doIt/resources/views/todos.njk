@@ -4,25 +4,56 @@
 <div id="wrapper">
     <div class="container">
         {% if not currentUser %}
-        <div class="text-center">Please login to get started</div>
+        <div class="text-center"><h1>Please login to get started</h1></div>
         {% else %}
         <div class="row">
             {% for category in categories %}
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
+                {% if category.user_id == currentUser.id %}
+                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="panel panel-default">
                         <div class="panel-heading">{{ category.name }}</div>
                         <div class="panel-body" style="max-height:150px; min-height:150px; overflow-y: scroll;">
                             {% for todo in category.allTodos %}
-                                <!--<li style="list-style:none;"><a href="#">{{ todo.title }}</a></li>-->
-                                {{ todo.title }}
+                                {% if todo.user_id == currentUser.id %}
+                                <li style="list-style:none;">{{ todo.title }}
+                                    <span class="pull-right"><a href="/editTodo/{{todo.id}}"><i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i></a>
+                                    <a href="/deleteTodo/{{todo.id}}"><i class="glyphicon glyphicon-trash" style="padding-left:10px;"></i></a></span>
+                                    </li>
+                                {% endif %}
                             {% endfor %}
                         </div>
                         <div class="panel-footer">
-                            <button type="submit" class="btn btn-danger">Delete<i class="glyphicon glyphicon-trash" style="padding-left:10px"></i></button>
-                            <button type="submit" class="btn btn-info pull-right">Edit<i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i></button>
+                            <a href="/deleteCategory/{{category.id}}"><button type="submit" class="btn btn-danger">Delete Category<i class="glyphicon glyphicon-trash" style="padding-left:10px"></i></button></a>
+                            <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#editCategory">
+                                Edit Category Name<i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i>
+                            </button>
+                            <div class="modal fade" id="editCategory" tabindex="-1" role="dialog" aria-labelledby="editCategoryLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="editCategoryLabel">Change category name</h4>
+                                </div>
+                                    <form role="form" method="POST" action="/editCategory/{{category.id}}">
+                                        <div class="modal-body" style="min-height:150px; max-height:150px;">
+                                            {{ csrfField }}
+                                            <div class="form-group">
+                                                <label for="name" class="control-label padding-bottom-5">Category</label>
+                                                <input type="text" class="form-control col-xs-6" id="name" name="name" placeholder="Category name" value="{{ category.name }}">
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default" type="submit">Save new category name</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
+                {% endif %}
             {% endfor %}
         </div>
         {% endif %}

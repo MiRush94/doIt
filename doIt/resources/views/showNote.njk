@@ -6,16 +6,19 @@
         <div class="text-center"><h1>Please login to get started</h1></div>
         {% else %}
         <div class="col-xs-12">
-            <h2> Note name : {{note.name}} </h2>
-            <h3>Note content</h3>
+            <h2> {{note.name}} </h2>
         </div>
         <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
             <pre rows="10" style="min-height:150px; max-height:150px; overflow-y:scroll;">{{note.content}}</pre>
-        </div>
-        <div class="col-xs-12">
             <a href="/editNote/{{note.id}}"><button class="btn btn-info text-center" style="min-width:10%;">
                 <i class="glyphicon glyphicon-edit" style="padding-right:10px;"></i>Edit</button></a>
+            <a href="/notes"><button class="btn btn-default text-center pull-right" style="min-width:10%;"><< Back</button></a>
         </div>
+        <!--<div class="col-xs-12 ">
+            <a href="/editNote/{{note.id}}"><button class="btn btn-info text-center" style="min-width:10%;">
+                <i class="glyphicon glyphicon-edit" style="padding-right:10px;"></i>Edit</button></a>
+            <a href="/notes"><button class="btn btn-default text-center pull-right" style="min-width:10%;">Cancel</button></a>
+        </div>-->
         {% endif %}
     </div>
 </div>
