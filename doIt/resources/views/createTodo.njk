@@ -27,7 +27,7 @@
                         <label for="name" class="col-xs-3 control-label">Category</label>
                         <div class="col-xs-6">
                             <div class="input-group">
-                                <input type="text" class="form-control" id="name" name="name" placeholder="Category" value="{{old('name')}}">
+                                <input type="text" class="form-control" id="name" name="name" placeholder="Category" value="{{old('name')}}" required>
                                 <span class="input-group-btn">
                                     <button class="btn btn-default" type="submit">Add Category</button>
                                 </span>
@@ -44,16 +44,16 @@
                     <div class="form-group">
                     <label for="title"  class="col-xs-3 control-label">Todo Title <i style="color:red">*</i></label>
                         <div class="col-xs-6">
-                            <input type="text" class="form-control" id="title" name="title" placeholder="Todo title" value="{{old('title')}}">
+                            <input type="text" class="form-control" id="title" name="title" placeholder="Todo title" value="{{old('title')}}" required>
                         </div>
                     </div>
                     <div class="form-group">
                     <label for="category_id" class="col-xs-3 control-label">Category <i style="color:red">*</i></label>
                         <div class="col-xs-6">
-                            <select class="form-control" id="category_id" name="category_id">
+                            <select class="form-control" id="category_id" name="category_id" required>
                             {% for category in categories %}
                                 {% if category.user_id == currentUser.id %}
-                                <option value="{{ category.id }}" {% if category.id == old('category_id') %} selected {% endif %}>
+                                <option value="{{ category.id }}" {% if category.id == old('category_id') %} selected {% endif %} >
                                     {{ category.name}}</option>
                                 {% endif %}  
                             {% endfor %}

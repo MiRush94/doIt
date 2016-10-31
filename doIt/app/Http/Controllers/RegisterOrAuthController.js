@@ -15,15 +15,12 @@ class RegisterOrAuthController {
         // Attempt to login with username and password
         try {
         const authCheck = yield request.auth.attempt(username, password)
+        if (authCheck) {
+            return response.redirect('/')
+        }
         }catch(e){
             yield response.sendView('loginSignUp', { error: e.message })
         }
-        // if (authCheck) {
-        //     return response.redirect('/')
-        // }
-            // yield response.sendView('loginSignUp', { error: loginMessage.error })
-            //yield response.redirect('loginSignUp', { error: loginMessage.error })
-        
     }
 
     * logout(request, response) {
