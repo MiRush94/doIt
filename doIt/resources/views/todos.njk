@@ -11,7 +11,8 @@
                 {% if category.user_id == currentUser.id %}
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
                     <div class="panel panel-default">
-                        <div class="panel-heading">{{ category.name }}</div>
+                        <div class="panel-heading">{{ category.name }}
+                            <span class="pull-right"><a href="#"><i class="fa fa-plus fa-lg" style="color:green" data-toggle="modal" data-target="#addTodo"></i></a></span></div>
                         <div class="panel-body" style="max-height:150px; min-height:150px; overflow-y: scroll;">
                             {% for todo in category.allTodos %}
                                 {% if todo.user_id == currentUser.id %}
@@ -24,8 +25,8 @@
                         </div>
                         <div class="panel-footer">
                             <a href="/deleteCategory/{{category.id}}"><button type="submit" class="btn btn-danger">Delete Category<i class="glyphicon glyphicon-trash" style="padding-left:10px"></i></button></a>
-                            <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#editCategory">
-                                Edit Category Name<i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i>
+                            <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#editCategory">Edit Category Name
+                                <i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i>
                             </button>
                             <div class="modal fade" id="editCategory" tabindex="-1" role="dialog" aria-labelledby="editCategoryLabel">
                             <div class="modal-dialog" role="document">
@@ -52,6 +53,40 @@
                             
                         </div>
                     </div>
+                    <div class="modal fade" id="addTodo" tabindex="-1" role="dialog" aria-labelledby="addTodoLabel">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="addTodoLabel">Add new Todo</h4>
+                                </div>
+                                    <form class="form-horizontal" role="form" method="POST" action="createTodo">
+                                            {{ csrfField }}
+                                            <div class="modal-body" style="min-height:150px; max-height:150px;">
+                                            <div class="form-group">
+                                                <label for="title" class="col-xs-3 control-label padding-bottom-5">Todo title</label>
+                                                <div class=" col-xs-6">
+                                                    <input type="text" class="form-control" id="title" name="title" placeholder="Todo title" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-group">
+                                            <label for="category_id" class="col-xs-3 control-label">Category <i style="color:red">*</i></label>
+                                                <div class="col-xs-6">
+                                                    <select class="form-control" id="category_id" name="category_id">
+                                                        {% if category.user_id == currentUser.id %}
+                                                        <option value="{{ category.id }}" selected>{{ category.name}}</option>
+                                                        {% endif %}  
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button class="btn btn-default" type="submit">Save</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            </div>
                 </div>
                 {% endif %}
             {% endfor %}

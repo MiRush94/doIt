@@ -8,10 +8,18 @@ const Validator = use('Validator')
 
 class HomeController {
     * index(request, response){
+        const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
         yield response.sendView('main');
     }
 
     * notes(request, response){
+        const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
         const notes = yield Note.all();
 
         yield response.sendView('notes', {
@@ -20,6 +28,10 @@ class HomeController {
     }
 
     * todos(request, response){
+        const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
         const categories = yield Category.all();
 
         for(let category of categories){

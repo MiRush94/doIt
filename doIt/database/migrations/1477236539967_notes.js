@@ -7,7 +7,7 @@ class NotesTableSchema extends Schema {
   up () {
     this.create('notes', (table) => {
       table.increments()
-      table.string('name', 60).notNullable().unique()
+      table.string('name', 60).notNullable()
       table.text('content').notNullable()
       table.integer('user_id').unsigned().references('id').inTable('users')
       table.timestamps()

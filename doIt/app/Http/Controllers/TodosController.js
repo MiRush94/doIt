@@ -29,7 +29,7 @@ class TodosController {
             response.redirect('back');
             return
         }
-
+        console.log(todoData);
         todoData.user_id = request.currentUser.id;
         const todo = yield Todo.create(todoData);
         response.redirect('/todos');
@@ -105,13 +105,13 @@ class TodosController {
         const category = yield Category.find(id);
         const todos = yield category.todos().fetch();
         
-        for(var i=todos.length; i = 0 ; --i){
-            todos.splice(0,1);
-        }
+        // for(var i=todos.length; i = 0 ; --i){
+        //     todos.splice(0,1);
+        // }
         
-        // yield category.todos.delete();
+        yield category.delete(todos);
         yield category.delete();
-        console.log(todos.length);
+        // console.log(todos.length);
         response.redirect('/todos');
     }
 

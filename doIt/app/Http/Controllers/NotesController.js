@@ -7,11 +7,18 @@ const Validator = use('Validator')
 class NotesController {
 
     * create(request,response){
-
+        const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
         yield response.sendView('createNote')
     }
 
     * doCreate(request,response){
+        const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
         const noteData = request.except('_csrf')
         const rules={
             name:'required',
@@ -35,7 +42,10 @@ class NotesController {
     }
 
     * show(request,response){
-
+        const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
         const id = request.param('id');
         const note = yield Note.find(id);
 
@@ -47,9 +57,14 @@ class NotesController {
         if (!note) {
         response.notFound('Note not found.')
         return
-}
+        }
     }
+
     * edit(request,response){
+        const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
         const id = request.param('id');
         const note = yield Note.find(id);
 
@@ -61,6 +76,7 @@ class NotesController {
     }
 
     * doEdit(request,response){
+
         const noteData = request.except('_csrf')
         const rules={
             name:'required',
