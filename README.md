@@ -11,7 +11,6 @@
      + Felhasználónév (ellenőrizve lesz, hogy foglalt-e)
      + E-mail
      + Jelszó (kis-nagy betű, spec karakter, legalább 8 karakter)
-     + Jelszó megerősítése
  + Bejelentkezés
    + Azonosítás:
      + felhasználónév + jelszó megadása
