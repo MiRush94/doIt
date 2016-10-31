@@ -9,9 +9,8 @@
  + Regisztráció
    + A regisztráció során a felhasználónak meg kell adnia:
      + Felhasználónév (ellenőrizve lesz, hogy foglalt-e)
-     + E-mail (elfelejtett jelszó esetén szükséges)
+     + E-mail
      + Jelszó (kis-nagy betű, spec karakter, legalább 8 karakter)
-     + Jelszó megerősítése
  + Bejelentkezés
    + Azonosítás:
      + felhasználónév + jelszó megadása
@@ -20,10 +19,7 @@
       + A TODO menüpont alatt kategóriákat tud készíteni
       + Kategóriákhoz hozzá tud adni elemeket, melyek utána megjelennek egymás alatt az adott kategóriánál.
       + Új és meglévő elemeket kategóriákhoz rendelhet és kategóriák szerint megjeleníthet
-      + A még el nem végzett elemeket ki lehet törölni, vagy meg lehet őket jelölni (done), így azok átkerülnek az elvégzett dolgok listájába
-      + Az elvégzett dolgok listáját lehet űríteni (reset), ha már túl sok minden van benne
-   + Elfelejtett jelszó
-      + Itt lehet új jelszót igényelni ( e-mailt kap)
+      + A még el nem végzett elemeket ki lehet törölni, vagy meg lehet őket jelölni (done).
     
 ###### Nem funkcionális követelmények:
   + **Könnyű áttekinthetőség:** Használjuk olyan színeket, melyek nem zavarók a felhasználóra nézve, legyen olvasható minden szöveg, a feliratok legyenek egyértelműek
