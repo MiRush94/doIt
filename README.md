@@ -20,8 +20,7 @@
       + A TODO menüpont alatt kategóriákat tud készíteni
       + Kategóriákhoz hozzá tud adni elemeket, melyek utána megjelennek egymás alatt az adott kategóriánál.
       + Új és meglévő elemeket kategóriákhoz rendelhet és kategóriák szerint megjeleníthet
-      + A még el nem végzett elemeket ki lehet törölni, vagy meg lehet őket jelölni (done), így azok átkerülnek az elvégzett dolgok listájába
-      + Az elvégzett dolgok listáját lehet űríteni (reset), ha már túl sok minden van benne
+      + A még el nem végzett elemeket ki lehet törölni, vagy meg lehet őket jelölni (done).
    + Elfelejtett jelszó
       + Itt lehet új jelszót igényelni ( e-mailt kap)
     
