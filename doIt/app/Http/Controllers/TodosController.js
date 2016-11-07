@@ -105,12 +105,12 @@ class TodosController {
         const category = yield Category.find(id);
         const todos = yield category.todos().fetch();
         
-        // for(var i=todos.length; i = 0 ; --i){
-        //     todos.splice(0,1);
-        // }
+        for(var i=todos.length; i = 0 ; --i){
+            todos.splice(i,1);
+        }
         
-        yield category.delete(todos);
-        yield category.delete();
+        // yield category.delete(todos);
+        //yield category.delete();
         // console.log(todos.length);
         response.redirect('/todos');
     }

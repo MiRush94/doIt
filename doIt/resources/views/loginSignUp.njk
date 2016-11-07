@@ -27,7 +27,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-                                    <button type="submit" class="btn btn-primary"><i class="fa fa-btn fa-sign-in" style="padding-right:10px"></i>Login</button>
+                                    <button type="submit" class="btn btn-info"><i class="fa fa-btn fa-sign-in" style="padding-right:10px"></i>Login</button>
                                 </div>
                             </div>
                         </fieldset>
@@ -57,7 +57,9 @@
                         <div class="form-group">
                                 <label for="inputPassword" class="col-xs-3 col-sm-3 col-md-3 col-lg-3 control-label">Password</label>
                                 <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
-                                    <input type="password" class="form-control" id="inputPassword" placeholder="min. 8 characters(upper,lower, number, spec. char)" name="inputPassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" required>
+                                    <input type="password" class="form-control" id="inputPassword"
+                                           placeholder="min. 8 characters(upper,lower, number, spec. char)" 
+                                           name="inputPassword" pattern="^(?=.*[0-9])(?=.*[!@#$%^&*_])[\w!@#$%^&*_]{6,16}$" title="Special characters can be: !@#$%^&*_" required>
                                     <i class="glyphicon glyphicon-lock form-control-feedback" style="text-align:left;"></i>
                                 </div>
                             </div>
@@ -71,7 +73,7 @@
                             </div>
                             <div class="form-group">
                                 <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3 col-sm-offset-3 col-md-offset-3 col-lg-offset-3">
-                                    <button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-user" style="padding-right:10px"></i>Register</button>
+                                    <button type="submit" class="btn btn-success"><i class="glyphicon glyphicon-user" style="padding-right:10px"></i>Register</button>
                                 </div>
                             </div>
                     </form>
@@ -79,7 +81,7 @@
             </div>
         </div>
         <div class="text-center" style="color:green"><h3>{{registerMessage.success}}</h3></div>
-        <div class="text-center" style="color:green"><h3>{{error}}</h3></div>
+        <div class="text-center" style="color:darkred;font-weight:bold"><h3>{{error}}</h3></div>
         {% if old('errors') %}
             <ul class="text-center">
                 {% for error in old('errors') %}
