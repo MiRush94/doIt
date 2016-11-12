@@ -34,3 +34,7 @@
   + **Add Todo** : Elvégzendő feladat hozzáadása
   + **Add Note** : Jegyzet hozzáadása
   + **Category** : Kategória, minden elvégzendő feladat egy adott kategóriához van hozzárendelve
+  + **Edit** : Szerkesztés
+### 1.3. Használatieset-modell, funkcionális követelmények
+**Vendég** : Csak a publikus oldalakat éri el
+  + **Bejelentkezés / Regisztráció**
