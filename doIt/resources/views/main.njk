@@ -7,11 +7,42 @@
         <div class="text-center"><h1>Please login to get started</h1></div>
         {% else %}
         <div class="panel panel-default">
-            <div class="<panel-heading>">
-
-            </div>
+            <div class="panel-heading" style="font-weight:bold; color: Orange"><h3>Hello, {{currentUser.username}} !</h3></div>
             <div class="panel-body">
-
+                <h4 style="color:lightblue">Welcome to Do It! :)</h4>
+                <h5>This is the main page, every relevant information is displayed here.</h5><br/>
+                <p>If you click on the <strong style="color:#9999ff">Notes</strong> tab, it will show you your Notes. If you don't have any, hover over the 
+                <strong style="color:#9999ff">Notes</strong> tab, and an <strong style="color:#9999ff">Add Note</strong>
+                    tab will appear. If you click on it, you'll be redirected to the <strong style="color:#9999ff">Add Note</strong> page, where you can create your note. 
+                    Now go ahead and create the note :) If you are satisfied with it, click submit, and you'll be redirected to the <strong style="color:#9999ff">Notes</strong> page.
+                </p><br/>
+                <p>Here you'll have two options:</p>
+                <ul>
+                    <li>- You can delete your <strong style="color:#9999ff">Note</strong>, or</li>
+                    <li>- You can edit it</li>
+                </ul>
+                <p>If you hit <strong style="color:#9999ff">Edit</strong>, again, you'll be redirected, but this time to the <strong style="color:#9999ff">Edit</strong> page.
+                Here you can change the title and the content
+                   of your <strong style="color:#9999ff">Note</strong>. No field can be left blank, pay attention to this.
+                </p>
+                <p>If you hit delete, your <strong style="color:#9999ff">Note</strong> will be <strong style="color:firebrick">deleted</strong></p>
+                <br />
+                <p>Next Tab is the <strong style="color:coral">Todo</strong> tab. Click on it, and you'll see your Todos sorted into <strong style="color:coral">Categories</strong>.</p>
+                <p> If you don't have any, hover over the <strong style="color:coral">Todos</strong> tab, and an <strong style="color:coral">Add Todo</strong>
+                    tab will appear. If you click on it, you'll be redirected to the <strong style="color:coral">Add Todo</strong> page, where you can create your todo.
+                    If you want to successfully create a <strong style="color:coral">Todo</strong>, you have to select a  <strong style="color:coral">Category</strong> for it.
+                    If no matching <strong style="color:coral">Category</strong> exists, go ahead, and add one. After that, you can select the desired  
+                    <strong style="color:coral">Category</strong> from the dropdown. Now go ahead and create the <strong style="color:coral">Todo</strong> :) .
+                    If you are satisfied with it, click submit, and you'll be redirected to the <strong style="color:coral">Todos</strong> page.
+                    Now that you have a <strong style="color:coral">Category</strong>, you can see all the <strong style="color:coral">Todos</strong> related to it.
+                    You can edit them the same way like your notes, and you can also <strong style="color:firebrick">Delete</strong> them. If you already have a 
+                    <strong style="color:coral">Category</strong>, you can add a <strong style="color:coral">Todo</strong> to it, by clicking on the green plus sign next the 
+                    <strong style="color:coral">Category</strong> name. You can also change the name of your <strong style="color:coral">Categroy</strong>, by clicking on the 
+                    <strong style="color:coral">Change Category name</strong>. If you want to <strong style="color:firebrick">delete</strong> your 
+                    <strong style="color:coral">Category</strong>, hit the <strong style="color:coral">Delete Category</strong> button. 
+                    Be careful, by doing this, you will loose all your related <strong style="color:coral">Todos</strong> too!</p>
+                    <br />
+                 <h3 style="color:lightblue">Happy Doing!! :)</h3>   
             </div>
         </div>
         {% endif %}
