@@ -63,4 +63,7 @@
    3. Rákattint az "Edit" gombra
    4. Az "Edit" oldalon megadja az új adatokat (Név (name), Tartalom (content))
    5. A "Save (mentés)" gombra kattintva elmenti a változtatásokat
-    
+
+![Doit action diagram](/docs/images/action_diagram.PNG)
+
+
