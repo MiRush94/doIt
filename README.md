@@ -194,3 +194,11 @@
 **Adatmodell**
 
 ![Doit Database diagram](docs/images/database_diagram.png)
+
+#### 2.2.4. Dinamikus működés
+**Szekvencia diagram**
+
+Vegyük példának a regisztrációt, majd egy új elem felvételét, szerkesztését, törlését, mindezt szekvenciadiagrammon.
+
+![Doit sequence diagram](docs/images/sequence_diagram.JPG)
+
