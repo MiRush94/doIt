@@ -113,6 +113,7 @@
   
 #### 2.2. Felhasználói-felület modell
 ###### 2.2.1 Oldalvázlatok:
+
 **Bejelentkezés / Regisztráció**
 ![Doit Login/ Sign up](docs/images/LoginSignUp_mockup.jpg)
 
