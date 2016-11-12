@@ -70,3 +70,4 @@
 #### 2.1 Architektúra terv
 ###### 2.1.1 Komponensdiagram
 
+![Doit component diagram](/docs/images/component_diagram.png)
