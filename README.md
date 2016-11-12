@@ -29,4 +29,8 @@
   + **Karbantarthatóság:** könnyen lehessen bővíteni, a különböző típusú fájlok külön csoportosítva, ésszerűen legyenek felbontva, a könnyebb fejleszthetőség miatt
   
 #### 1.2. Szakterületi fogalomjegyzék
-**Note** : Jegyzet, rendelkezik névvel és tartalommal
+  + **Note** : Jegyzet, rendelkezik névvel és tartalommal
+  + **Todo** : Elvégzendő feladat, csak névvel rendelkezik
+  + **Add Todo** : Elvégzendő feladat hozzáadása
+  + **Add Note** : Jegyzet hozzáadása
+  + **Category** : Kategória, minden elvégzendő feladat egy adott kategóriához van hozzárendelve
