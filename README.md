@@ -66,4 +66,7 @@
 
 ![Doit action diagram](/docs/images/action_diagram.png)
 
+### 2. Tervezés
+#### 2.1 Architektúra terv
+###### Komponensdiagram
 
