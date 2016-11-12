@@ -71,3 +71,43 @@
 ###### 2.1.1 Komponensdiagram
 
 ![Doit component diagram](/docs/images/component_diagram.png)
+
+###### 2.1.2. Oldaltérkép:
+**Publikus**
+  + Bejelentkezés / Regisztráció
+**Bejelentkezett**
+  + Főoldal
+  + Jegyzetek
+    + Új jegyzet felvétele
+    + Jegyzet törlése
+    + Jegyzet szerkesztése
+  + Teendők
+    + Új teendő felvétele
+    + Teendő szerkesztése
+    + Teendő törlése
+    + Kategória törlése (hozzátartozó teendőkkel együtt)
+    + Kategória nevének megváltoztatása
+    + Adott kategóriához teendő felvétele
+   
+###### 2.1.3 Végpontok
+  + GET / : főoldal
+  + GET /notes : jegyzetek oldal
+  + GET /todos : teendők oldal
+  + GET /loginSignUp : bejelentkező / regisztrációs oldal
+  + POST /login : bejelentkező adatok felküldése
+  + POST /register : regisztrációs adatok felküldése
+  + GET /logout : kijelentkezés (átirányítás a bejelentkező oldalra)
+  + GET /createNote : új jegyzet készítése
+  + POST /createNote : új jegyzet felvételéhez szükséges adatok felküldése
+  + GET /editNote/:id : jegyzet módosítása (oldal megjelenítése az adatokkal)
+  + GET /deleteNote/:id : jegyzet törlése
+  + POST /editNote/:id : jegyzet tényleges módosítása a beadott adatok felküldésével
+  + POST /addCategory : kategória hozzáadása az adatok felküldésével
+  + GET /createTodo : úgy teendő készítése (oldal megjelenítése)
+  + POST /createTodo : új teendő felvételéhez szükséges adatok felküldése
+  + GET /editTodo/:id : teendő modósítása (oldal megjelenítése)
+  + POST /editTodo/:id : teendő tényleges modósítása a bevitt adatok felküldésével
+  + POST /editCategory/:id : kategória módosítása a bevitt adatok elküldésével
+  + GET /deleteTodo/:id : teendő törlése
+  + GET /deleteCategory/:id : kategória törlése (törli a hozzá tartozó teendőket is)
+  
