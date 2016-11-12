@@ -29,13 +29,24 @@
   + **Karbantarthatóság:** könnyen lehessen bővíteni, a különböző típusú fájlok külön csoportosítva, ésszerűen legyenek felbontva, a könnyebb fejleszthetőség miatt
   
 #### 1.2. Szakterületi fogalomjegyzék
-  + **Note** : Jegyzet, rendelkezik névvel és tartalommal
-  + **Todo** : Elvégzendő feladat, csak névvel rendelkezik
-  + **Add Todo** : Elvégzendő feladat hozzáadása
-  + **Add Note** : Jegyzet hozzáadása
-  + **Category** : Kategória, minden elvégzendő feladat egy adott kategóriához van hozzárendelve
-  + **Edit** : Szerkesztés
+  + **Note:** Jegyzet, rendelkezik névvel és tartalommal
+  + **Todo:** Elvégzendő feladat, csak névvel rendelkezik
+  + **Add Todo:** Elvégzendő feladat hozzáadása
+  + **Add Note:** Jegyzet hozzáadása
+  + **Category:** Kategória, minden elvégzendő feladat egy adott kategóriához van hozzárendelve
+  + **Edit:** Szerkesztés
   
 #### 1.3. Használatieset-modell, funkcionális követelmények
-**Vendég** : Csak a publikus oldalakat éri el
-  + **Bejelentkezés / Regisztráció**
+**Vendég:** Csak a publikus oldalakat éri el
+  + Bejelentkezés / Regisztráció
+**Bejelentkezett felhasználó:** A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
+  + **Főoldal (Home):** Ez az oldal tartalmaz egy leírást arról, hogy milyen menüpontok alatt mit talál, és hogy hogyan tud felvenni új jegyzetet, illetve teendőt.
+  + Jegyzetek (Notes)
+  + Teendők (Todos)
+  + Új jegyzet felvétele (Add Note)
+  + Új teendő felvétele (Add Todo)
+  + Meglévő jegyzet törlése
+  + Meglévő kategória törlése
+  + Meglévő teendő törlése kategóriából
+  + Meglévő jegyzet szerkesztése
+  + Meglévő teendő szerkesztése
