@@ -38,8 +38,11 @@
   
 #### 1.3. Használatieset-modell, funkcionális követelmények
 **Vendég:** Csak a publikus oldalakat éri el
-  + Bejelentkezés / Regisztráció
+
+   + Bejelentkezés / Regisztráció
+  
 **Bejelentkezett felhasználó:** A publikus oldalak elérésén felül egyéb funkciókhoz is hozzáfér.
+  
   + **Főoldal (Home):** Ez az oldal tartalmaz egy leírást arról, hogy milyen menüpontok alatt mit talál, és hogy hogyan tud felvenni új jegyzetet, illetve teendőt.
   + Jegyzetek (Notes)
   + Teendők (Todos)
