@@ -220,11 +220,65 @@ Visual Studio Code + Adonis.js + Node.js + Express Admin
   + Miután leklónoztuk a repositoryt, nyissuk meg visual studio code-ban
   + A command line-ban írjuk be ezt a parancsot, hogy locálban fusson a serverünk: npm run dev
   + Majd ugyan ebbe a mappába telepítsük az adatbázis kezelőnket is: npm i --save sqlite3
-  + Majd config/database.js beállítása
-  + Majd User tábla létrehozása: node ace auth:setup
   + Majd ugyan ebbe a mappába telepítjük az express-admint: npm install express-admin
-  + Konfig mappa: mkdir config\express-admin
   + Indítás: node_modules\.bin\admin config\express-admin
   + Böngésző: Localhost:4444 (ezen fut az express-admin) és localhost:3333 (ezen fut a node.js server)
+  + Ha változtatunk a kód-on, akkor a VS-Code-ban a harmadik iconra kattintva láthatjuk a változásokat. A "Changes" feliratra húzva egerünket megjelenik egy plusz és egy visszanyíl gomb. A plusz-iconra kattintva hozzáadhatjuk az összes változást. 
+  + A "Commit message" mezőbe írjuk be pár szóval, hogy milyen változások történtek
+  + Nyomjunk a pipára
+  + Ezután kattintsunk a három pontra majd a "Push" feliratra
+  + Ezután a GitHub oldalán láthatjuk a változásokat
+  
+  
+###### 3.1.2. Könyvtárstruktúra, funkciók
+
+  + doit
+    + config
+      + express-admin
+        + config.json
+        + custom.json
+        + settings.json
+        + users.json
+      + app.js
+      + auth.js
+      + database.js
+      + event.js
+      + shield.js
+    + database
+      + migrations
+        + create_users_table.js
+        + create_tokens_table.js
+        + categories.js
+        + notes.js
+        + todos.js
+      + todos.sqlite
+    + node_modules
+    + public
+      + assets
+      + font-awesome
+      + custom.css
+      + custom.js
+      + style.css
+    + resources
+      + views
+        + createNote.njk
+        + createTodo.njk
+        + editNote.njk
+        + editTodo.njk
+        + layout.njk
+        + loginSignUp.njk
+        + main.njk
+        + notes.njk
+        + notes.njk
+        + todos.njk
+    + .env
+    + .gitignore
+    + ace
+    + package.json
+    + server.js
+        
+        
+        
+      
   
   
