@@ -15,12 +15,12 @@
    + Azonosítás:
      + felhasználónév + jelszó megadása
    + Bejelentlezett felhasználók részére:
-      + A főoldalon fel tud venni úgy jegyzetet, vagy a meglévőeket tudja kitörölni
-      + A TODO menüpont alatt kategóriákat tud készíteni
-      + Kategóriákhoz hozzá tud adni elemeket, melyek utána megjelennek egymás alatt az adott kategóriánál.
-      + Új és meglévő elemeket kategóriákhoz rendelhet és kategóriák szerint megjeleníthet
-      + A még el nem végzett elemeket ki lehet törölni, vagy meg lehet őket jelölni (done).
-    
+      + A főoldalon talál egy leírást arról, hogy mit hogyan kell használni
+      + A Notes oldalon látja az összes felvett jegyzetét és ezeket tudja törölni vagy szerkeszteni
+      + Az "+ Add Notes" menüpont fel tud venni úgy jegyzetet
+      + Az "+ Add Todos" menüpont alatt új teendőt tud felvenni és még nem létező kategória esetén kategóriákat tud készíteni és a teendőt valamelyikhez hozzá tudja relndelni
+      + A Todos oldalon meglévő elemeket kategóriákhoz rendelheti és kategóriák szerint megjelenítheti, valamint teendőket törölhet, szerkeszthet
+         
 ###### Nem funkcionális követelmények:
   + **Könnyű áttekinthetőség:** Használjuk olyan színeket, melyek nem zavarók a felhasználóra nézve, legyen olvasható minden szöveg, a feliratok legyenek egyértelműek
   + **Használhatóság:** Könnyű áttekinthetőség, ésszerű elrendezés, könnyű kezelhetőség, minden nagyjából egy kattinstásra legyen
