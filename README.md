@@ -58,9 +58,9 @@
 
 **Egy folyamat leírása**
   + **Meglévő jegyzet szerkesztése:**
-    1. A felhasználó az oldalra érkezve bejelentkezik vagy regisztrál
-    2. Regisztráció után megtekintheti a jegyzeteit listázó oldalt, ahol kiválaszthatja a szerkeszteni kívánt jegyzetet.
-    3. Rákattint az "Edit" gombra
-    4. Az "Edit" oldalon megadja az új adatokat (Név (name), Tartalom (content))
-    5. A "Save (mentés)" gombra kattintva elmenti a változtatásokat
+   1. A felhasználó az oldalra érkezve bejelentkezik vagy regisztrál
+   2. Regisztráció után megtekintheti a jegyzeteit listázó oldalt, ahol kiválaszthatja a szerkeszteni kívánt jegyzetet.
+   3. Rákattint az "Edit" gombra
+   4. Az "Edit" oldalon megadja az új adatokat (Név (name), Tartalom (content))
+   5. A "Save (mentés)" gombra kattintva elmenti a változtatásokat
     
