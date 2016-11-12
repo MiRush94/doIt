@@ -115,16 +115,26 @@
 ###### 2.2.1 Oldalvázlatok:
 **Bejelentkezés**
 ![Doit Login/ Sign up](docs/images/LoginSignUp_mockup.jpg)
+
 **Főoldal**
 ![Doit Homepage](docs/images/Home_mockup.jpg)
+
 **Jegyzetek (Notes)**
 ![Doit Notes](docs/images/Notes_mockup.jpg)
+
 **Jegyzet felvétele (Add note)**
 ![Doit Add Note](docs/images/Add_Note_mockup.jpg)
+
 **Jegyzet szerkesztése (Edit note)**
 ![Doit Edit Note](docs/images/Edit_Note_mockup.jpg)
+
 **Teendők (Todos)**
 ![Doit Todos](docs/images/Todos_mockup.jpg)
+
 **Teendő felvétele**
 ![Doit Add Todo](docs/images/Add_Todo_mockup.jpg)
+
+**Teendő szerkesztése**
+![Doit Edit Todo](docs/images/Edit_Todo_mockup.jpg)
+
 
