@@ -111,3 +111,7 @@
   + GET /deleteTodo/:id : teendő törlése
   + GET /deleteCategory/:id : kategória törlése (törli a hozzá tartozó teendőket is)
   
+#### 2.2. Felhasználói-felület modell
+###### 2.2.1 Oldalvázlatok:
+
+![Doit Login/ Sign up](docs/images/LoginSignUp_mockup.jpg)
