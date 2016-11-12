@@ -68,5 +68,5 @@
 
 ### 2. Tervezés
 #### 2.1 Architektúra terv
-###### Komponensdiagram
+###### 2.1.1 Komponensdiagram
 
