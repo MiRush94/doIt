@@ -113,28 +113,75 @@
   
 #### 2.2. Felhasználói-felület modell
 ###### 2.2.1 Oldalvázlatok:
-**Bejelentkezés**
+**Bejelentkezés / Regisztráció**
 ![Doit Login/ Sign up](docs/images/LoginSignUp_mockup.jpg)
 
 **Főoldal**
 ![Doit Homepage](docs/images/Home_mockup.jpg)
 
 **Jegyzetek (Notes)**
-![Doit Notes](docs/images/Notes_mockup.jpg)
+![Doit Notes mockup](docs/images/Notes_mockup.jpg)
 
 **Jegyzet felvétele (Add note)**
-![Doit Add Note](docs/images/Add_Note_mockup.jpg)
+![Doit Add Note mockup](docs/images/Add_Note_mockup.jpg)
 
 **Jegyzet szerkesztése (Edit note)**
-![Doit Edit Note](docs/images/Edit_Note_mockup.jpg)
+![Doit Edit Note mockup](docs/images/Edit_Note_mockup.jpg)
 
 **Teendők (Todos)**
-![Doit Todos](docs/images/Todos_mockup.jpg)
+![Doit Todos mockup](docs/images/Todos_mockup.jpg)
 
 **Teendő felvétele**
-![Doit Add Todo](docs/images/Add_Todo_mockup.jpg)
+![Doit Add Todo mockup](docs/images/Add_Todo_mockup.jpg)
 
 **Teendő szerkesztése**
-![Doit Edit Todo](docs/images/Edit_Todo_mockup.jpg)
+![Doit Edit Todo mockup](docs/images/Edit_Todo_mockup.jpg)
+
+#### 2.2.2.Designtervek (végső megvalósítás kinézete):
+
+**Bejelentkezés / Regisztráció**
+![Doit Login/ Sign up design](docs/images/LoginSignUp_design.jpg)
+
+**Sikeres regisztráció**
+![Doit reg. success design](docs/images/Registration_success_design.JPG)
+
+**Rossz jelszó**
+![Doit Incorrect password design](docs/images/Incorrect_password.JPG)
+
+**Főoldal**
+![Doit Welcome page design](docs/images/Welcomepage_design.JPG)
+
+**Jegyzetek (Notes)**
+![Doit Notes design](docs/images/Notes_design.jpg)
+
+**Jegyzet felvétele menüpont**
+![Doit Add Note option design](docs/images/Add_Note_option_design.jpg)
+
+**Jegyzet felvétele (Add note)**
+![Doit Add Note design](docs/images/New_Note_design.jpg)
+
+**Jegyzet szerkesztése (Edit note)**
+![Doit Edit Note design](docs/images/Edit_Note_design.jpg)
+
+**Teendők (Todos)**
+![Doit Todos design](docs/images/Todos_design.jpg)
+
+**Teendő felvétele menüpont**
+![Doit Add Todo option design](docs/images/Add_Todo_option_design.jpg)
+
+**Teendő felvétele**
+![Doit Add Todo design](docs/images/New_Todo_design.jpg)
+
+**Teendő felvétele adott kategóriához**
+![Doit Add Todo from category panel design](docs/images/New_Todo_from category_panel_designl.JPG)
+
+**Teendő szerkesztése**
+![Doit Edit Todo design](docs/images/Edit_Todo_design.jpg)
+
+**Kategória nevének szerkesztése**
+![Doit Edit Category Name design](docs/images/Change_Category_Name_design.JPG)
+
+**Kijelentkezés opció**
+![Doit Logout Design](docs/images/logout_design.JPG)
 
 
