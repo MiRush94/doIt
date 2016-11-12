@@ -115,3 +115,7 @@
 ###### 2.2.1 Oldalvázlatok:
 
 ![Doit Login/ Sign up](docs/images/LoginSignUp_mockup.jpg)
+![Doit Notes](docs/images/Notes_mockup.jpg)
+![Doit Add Note](docs/images/Add_Note_mockup.jpg)
+![Doit Edit Note](docs/images/Edit_Note_mockup.jpg)
+
