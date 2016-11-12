@@ -190,4 +190,7 @@
 
 ![Doit Logout Design](docs/images/Logout_design.JPG)
 
+#### 2.2.3. Osztálymodell
+**Adatmodell**
 
+![Doit Database diagram](docs/images/database_diagram.png)
