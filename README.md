@@ -53,4 +53,5 @@
   + Meglévő teendő törlése kategóriából
   + Meglévő jegyzet szerkesztése
   + Meglévő teendő szerkesztése
-![Doit usecase diagram](/docs/images/Doit_usecase)
+  
+![Doit usecase diagram](/docs/images/Doit_usecase.jpg)
