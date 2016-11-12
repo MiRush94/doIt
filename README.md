@@ -154,7 +154,7 @@
 ![Doit Welcome page design](docs/images/Welcomepage_design.JPG)
 
 **Jegyzetek (Notes)**
-![Doit Notes design](docs/images/Notes_design.jpg)
+![Doit Notes design](docs/images/Notes_design.JPG)
 
 **Jegyzet felvétele menüpont**
 ![Doit Add Note option design](docs/images/Add_Note_option_design.JPG)
@@ -169,21 +169,25 @@
 ![Doit Todos design](docs/images/Todos_design.jpg)
 
 **Teendő felvétele menüpont**
+
 ![Doit Add Todo option design](docs/images/Add_Todo_option_design.JPG)
 
 **Teendő felvétele**
 ![Doit Add Todo design](docs/images/New_Todo_design.JPG)
 
 **Teendő felvétele adott kategóriához**
+
 ![Doit Add Todo from category panel design](docs/images/New_Todo_from category_panel_designl.JPG)
 
 **Teendő szerkesztése**
 ![Doit Edit Todo design](docs/images/Edit_Todo_design.JPG)
 
 **Kategória nevének szerkesztése**
+
 ![Doit Edit Category Name design](docs/images/Change_Category_Name_design.JPG)
 
 **Kijelentkezés opció**
-![Doit Logout Design](docs/images/logout_design.JPG)
+
+![Doit Logout Design](docs/images/Logout_design.JPG)
 
 
