@@ -202,3 +202,29 @@ Vegyük példának a regisztrációt, majd egy új elem felvételét, szerkeszt�
 
 ![Doit sequence diagram](docs/images/sequence_diagram.JPG)
 
+#### 3. Implementáció
+###### Fejlesztőkörnyezet
+
+Visual Studio Code + Adonis.js + Node.js + Express Admin
+  
+  + Telepítsük a Node.js-t (töltsük le a legfrisebb változatot)
+  + Github account szükséges, további információk itt találhatók a git konfigurálásához:
+    + [Github config ] (https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+  + Githubon létrehozunk egy új repositoryt
+  + A saját gépünkön tetszőleges helyen létrehozunk egy mappát
+  + Command line megnyitása, majd lépjünk be ebbe a mappába
+  + Adjuk ki ezt a parancsot: git config --global url."https://".insteadOf git://
+  + Majd ezt: npm i adonis-cli hogy telepítsük az adonist
+  + Majd: git clone https://github.com/username/reponame.git
+  + Majd állítsuk be a git repót, ahova dolgozni fogunk: git remote add origin https://github.com/user/repo.git
+  + Miután leklónoztuk a repositoryt, nyissuk meg visual studio code-ban
+  + A command line-ban írjuk be ezt a parancsot, hogy locálban fusson a serverünk: npm run dev
+  + Majd ugyan ebbe a mappába telepítsük az adatbázis kezelőnket is: npm i --save sqlite3
+  + Majd config/database.js beállítása
+  + Majd User tábla létrehozása: node ace auth:setup
+  + Majd ugyan ebbe a mappába telepítjük az express-admint: npm install express-admin
+  + Konfig mappa: mkdir config\express-admin
+  + Indítás: node_modules\.bin\admin config\express-admin
+  + Böngésző: Localhost:4444 (ezen fut az express-admin) és localhost:3333 (ezen fut a node.js server)
+  
+  
