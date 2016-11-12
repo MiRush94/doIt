@@ -276,9 +276,40 @@ Visual Studio Code + Adonis.js + Node.js + Express Admin
     + ace
     + package.json
     + server.js
-        
-        
-        
-      
+
+#### 4. Tesztelés
+
+#### 5. Felhasználói dokumentáció
+
+**Futtatáshoz szükséges operációs rendszer:** Tetszőleges, de a Windows ajánlott
+**A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva
+**Egyéb követelmények:** Internet, böngésző telepítése, JavaScript ajánlott (Node.js + Adonis.js) ezen kívül sqlite3 és Express Admin
+
+**Program használata**
   
+  1.  Böngészőben nyissuk meg a főoldalt (localhost:3333)
+  2.  Mivel a dőoldalt csak bejelentkezett felhasználók érik el, egyből a "Bejelentkezés / Regisztráció" oldalra leszünk átirányítva
+  3.  Bejelentkezés/Regisztráció után a főoldalra kerülünk, ahol minden további lényeges információ le van írva (főleg használati utasítások)
+  4.  3 fő menüpont van, ebből ketőnek egy-egy almenüje is van: 
+    + Home (főoldal)
+    + Notes (Jegyzetek)
+      + Add Note
+    + Todos (Teendők)
+      + Add Todo
+  5.  Értelem szerűen töltsük ki az űrlapot
+  6.  Hibás adatok esetén az űrlap jelezni fog
+  7.  Submit gombra kattintva mentsük el az adatokat
+  8.  Notes oldalon a Delete gombra kattintva törölhetjük a jegyzetünket, az "Edit" gombra kattintva szerkeszthetjük
+  9.  Todos oldalon a "Delete Category" az egész kategóriát törli a hozzá tartozó teendőkkel együtt
+  10. Todos oldalon a Todo-k mellett található "kuka icon"-nal tudunk egyenként törölni, valamint a ceruza iconra kattintva szerkeszthetjük a teendőt
+  11. A Todos oldalon egyből kategóriához is hozzáadhatunk teendőket, ha a kategória neve mellett található zöld plusz jelre kattintunk
+  12. A Teendők nem csak az "Edit oldalon szerkeszthetőek", hanem ha a ceruza elemre kattintunk, felugrik egy ablak
+  13. A Kategóriák neve is szerkeszthető, ha a "Change Category Name" gombra kattintunk --> lesz egy felugró ablak --> majd Save gomb
   
+#### 6. Irodalomjegyzék:
+
+http://webprogramozas.inf.elte.hu/alkfejl.php
+
+http://ade.web.elte.hu/wabp/lecke2_lap1.html
+
+http://webprogramozas.inf.elte.hu/alkfejl/A_dokumentacio_felepitese.pdf
