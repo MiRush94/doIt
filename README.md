@@ -54,4 +54,4 @@
   + Meglévő jegyzet szerkesztése
   + Meglévő teendő szerkesztése
   
-![Doit usecase diagram](/docs/images/Doit_usecase.jpg)
+![Doit usecase diagram](/docs/images/Doit_usecase.JPG)
