@@ -56,7 +56,7 @@ class TodosController {
     }
 
     * edit(request,response){
-        const categories = yield Category.all()
+        const categories = yield Category.query().where('user_id', request.currentUser.id).fetch()
         const id = request.param('id');
         const todo = yield Todo.find(id);
         yield todo.related('category').load();
@@ -86,8 +86,8 @@ class TodosController {
 
         const id = request.param('id');
         const todo = yield Todo.find(id);
-        todo.title = request.input('title');
-        todo.category_id = request.input('category_id');
+        todo.title = todoData.title;
+        todo.category_id = todoData.category_id;
         yield todo.save();
         response.redirect('/todos');
     }
