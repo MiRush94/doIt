@@ -194,3 +194,122 @@
 **Adatmodell**
 
 ![Doit Database diagram](docs/images/database_diagram.png)
+
+#### 2.2.4. Dinamikus működés
+**Szekvencia diagram**
+
+Vegyük példának a regisztrációt, majd egy új elem felvételét, szerkesztését, törlését, mindezt szekvenciadiagrammon.
+
+![Doit sequence diagram](docs/images/sequence_diagram.JPG)
+
+#### 3. Implementáció
+###### Fejlesztőkörnyezet
+
+Visual Studio Code + Adonis.js + Node.js + Express Admin
+  
+  + Telepítsük a Node.js-t (töltsük le a legfrisebb változatot)
+  + Github account szükséges, további információk itt találhatók a git konfigurálásához:
+    + [Github config ] (https://git-scm.com/book/en/v2/Getting-Started-First-Time-Git-Setup)
+  + Githubon létrehozunk egy új repositoryt
+  + A saját gépünkön tetszőleges helyen létrehozunk egy mappát
+  + Command line megnyitása, majd lépjünk be ebbe a mappába
+  + Adjuk ki ezt a parancsot: git config --global url."https://".insteadOf git://
+  + Majd ezt: npm i adonis-cli hogy telepítsük az adonist
+  + Majd: git clone https://github.com/username/reponame.git
+  + Majd állítsuk be a git repót, ahova dolgozni fogunk: git remote add origin https://github.com/user/repo.git
+  + Miután leklónoztuk a repositoryt, nyissuk meg visual studio code-ban
+  + A command line-ban írjuk be ezt a parancsot, hogy locálban fusson a serverünk: npm run dev
+  + Majd ugyan ebbe a mappába telepítsük az adatbázis kezelőnket is: npm i --save sqlite3
+  + Majd ugyan ebbe a mappába telepítjük az express-admint: npm install express-admin
+  + Indítás: node_modules\.bin\admin config\express-admin
+  + Böngésző: Localhost:4444 (ezen fut az express-admin) és localhost:3333 (ezen fut a node.js server)
+  + Ha változtatunk a kód-on, akkor a VS-Code-ban a harmadik iconra kattintva láthatjuk a változásokat. A "Changes" feliratra húzva egerünket megjelenik egy plusz és egy visszanyíl gomb. A plusz-iconra kattintva hozzáadhatjuk az összes változást. 
+  + A "Commit message" mezőbe írjuk be pár szóval, hogy milyen változások történtek
+  + Nyomjunk a pipára
+  + Ezután kattintsunk a három pontra majd a "Push" feliratra
+  + Ezután a GitHub oldalán láthatjuk a változásokat
+  
+  
+###### 3.1.2. Könyvtárstruktúra, funkciók
+
+  + doit
+    + config
+      + express-admin
+        + config.json
+        + custom.json
+        + settings.json
+        + users.json
+      + app.js
+      + auth.js
+      + database.js
+      + event.js
+      + shield.js
+    + database
+      + migrations
+        + create_users_table.js
+        + create_tokens_table.js
+        + categories.js
+        + notes.js
+        + todos.js
+      + todos.sqlite
+    + node_modules
+    + public
+      + assets
+      + font-awesome
+      + custom.css
+      + custom.js
+      + style.css
+    + resources
+      + views
+        + createNote.njk
+        + createTodo.njk
+        + editNote.njk
+        + editTodo.njk
+        + layout.njk
+        + loginSignUp.njk
+        + main.njk
+        + notes.njk
+        + notes.njk
+        + todos.njk
+    + .env
+    + .gitignore
+    + ace
+    + package.json
+    + server.js
+
+#### 4. Tesztelés
+
+#### 5. Felhasználói dokumentáció
+
+**Futtatáshoz szükséges operációs rendszer:** Tetszőleges, de a Windows ajánlott
+**A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva
+**Egyéb követelmények:** Internet, böngésző telepítése, JavaScript ajánlott (Node.js + Adonis.js) ezen kívül sqlite3 és Express Admin
+
+**Program használata**
+  
+  1.  Böngészőben nyissuk meg a főoldalt (localhost:3333)
+  2.  Mivel a dőoldalt csak bejelentkezett felhasználók érik el, egyből a "Bejelentkezés / Regisztráció" oldalra leszünk átirányítva
+  3.  Bejelentkezés/Regisztráció után a főoldalra kerülünk, ahol minden további lényeges információ le van írva (főleg használati utasítások)
+  4.  3 fő menüpont van, ebből ketőnek egy-egy almenüje is van: 
+    + Home (főoldal)
+    + Notes (Jegyzetek)
+      + Add Note
+    + Todos (Teendők)
+      + Add Todo
+  5.  Értelem szerűen töltsük ki az űrlapot
+  6.  Hibás adatok esetén az űrlap jelezni fog
+  7.  Submit gombra kattintva mentsük el az adatokat
+  8.  Notes oldalon a Delete gombra kattintva törölhetjük a jegyzetünket, az "Edit" gombra kattintva szerkeszthetjük
+  9.  Todos oldalon a "Delete Category" az egész kategóriát törli a hozzá tartozó teendőkkel együtt
+  10. Todos oldalon a Todo-k mellett található "kuka icon"-nal tudunk egyenként törölni, valamint a ceruza iconra kattintva szerkeszthetjük a teendőt
+  11. A Todos oldalon egyből kategóriához is hozzáadhatunk teendőket, ha a kategória neve mellett található zöld plusz jelre kattintunk
+  12. A Teendők nem csak az "Edit oldalon szerkeszthetőek", hanem ha a ceruza elemre kattintunk, felugrik egy ablak
+  13. A Kategóriák neve is szerkeszthető, ha a "Change Category Name" gombra kattintunk --> lesz egy felugró ablak --> majd Save gomb
+  
+#### 6. Irodalomjegyzék:
+
+http://webprogramozas.inf.elte.hu/alkfejl.php
+
+http://ade.web.elte.hu/wabp/lecke2_lap1.html
+
+http://webprogramozas.inf.elte.hu/alkfejl/A_dokumentacio_felepitese.pdf
