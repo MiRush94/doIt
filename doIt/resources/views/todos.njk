@@ -1,5 +1,4 @@
 {% extends "layout" %}
-
 {% block content%}
 <div id="wrapper">
     <div class="container">
@@ -10,21 +9,23 @@
             {% for category in categories %}
                 {% if category.user_id == currentUser.id %}
                 <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
-                    <div class="panel panel-default">
+                    <div class="panel panel-default" id="todosPanel">
                         <div class="panel-heading">{{ category.name }}
                             <span class="pull-right"><a href="#"><i class="fa fa-plus fa-lg" style="color:green" data-toggle="modal" data-target="#addTodo"></i></a></span></div>
                         <div class="panel-body" style="max-height:150px; min-height:150px; overflow-y: scroll;">
                             {% for todo in category.allTodos %}
                                 {% if todo.user_id == currentUser.id %}
-                                <li style="list-style:none;">{{ todo.title }}
-                                    <span class="pull-right"><a href="/editTodo/{{todo.id}}"><i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i></a>
-                                    <a href="/deleteTodo/{{todo.id}}"><i class="glyphicon glyphicon-trash" style="padding-left:10px;"></i></a></span>
-                                    </li>
+                                <li style="list-style:none;" class="smart-todo">{{ todo.title }}
+                                    <span class="pull-right">
+                                        <a href="/editTodo/{{todo.id}}" id="editTodo{{todo.id}}"><i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i></a>
+                                        <a href="/deleteTodo/{{todo.id}}" id="deleteTodo{{todo.id}}" onclick="deleteTodo({{todo.id}})"><i class="glyphicon glyphicon-trash" style="padding-left:10px;"></i></a>
+                                    </span>
+                                </li>
                                 {% endif %}
                             {% endfor %}
                         </div>
                         <div class="panel-footer">
-                            <a href="/deleteCategory/{{category.id}}"><button type="submit" class="btn btn-danger">Delete Category<i class="glyphicon glyphicon-trash" style="padding-left:10px"></i></button></a>
+                            <a href="/deleteCategory/{{category.id}}" id="deleteCategory{{category.id}}" onclick="deleteCategory({{category.id}})" class="btn btn-danger">Delete Category<i class="glyphicon glyphicon-trash" style="padding-left:10px"></i></a>
                             <button type="button" class="btn btn-info pull-right" data-toggle="modal" data-target="#editCategory">Edit Category Name
                                 <i class="glyphicon glyphicon-pencil" style="padding-left:10px"></i>
                             </button>
@@ -40,7 +41,7 @@
                                             {{ csrfField }}
                                             <div class="form-group">
                                                 <label for="name" class="control-label padding-bottom-5">Category</label>
-                                                <input type="text" class="form-control col-xs-6" id="name" name="name" placeholder="Category name" value="{{ category.name }}">
+                                                <input type="text" class="form-control col-xs-6" id="name" name="name" placeholder="Category name" value="{{ category.name }}" required>
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -86,10 +87,42 @@
                                     </form>
                                 </div>
                             </div>
-                            </div>
+                        </div>
+                      
                 </div>
                 {% endif %}
             {% endfor %}
+              <span class="help-block"></span>
+                <div class="modal fade confirm-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                        <div class="modal-body">
+                            You sure you want to delete this?
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">OK</button>
+                            <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="modal fade edit-modal" tabindex="-1" role="dialog">
+                    <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="addTodoLabel">Edit Todo</h4>
+                                </div>
+                        <div class="modal-body">
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-success modal-ok" data-dismiss="modal">OK</button>
+                            <button type="button" class="btn btn-danger modal-cancel" data-dismiss="modal">Cancel</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>-->
         </div>
         {% endif %}
     </div>

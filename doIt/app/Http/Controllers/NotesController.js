@@ -35,10 +35,10 @@ class NotesController {
             response.redirect('back');
             return
         }
-        const user = User.find(1);
+        // const user = User.find(1);
         noteData.user_id = request.currentUser.id;
         const note = yield Note.create(noteData)
-        response.redirect('notes')
+        response.redirect('/notes')
     }
 
     * show(request,response){
@@ -76,7 +76,6 @@ class NotesController {
     }
 
     * doEdit(request,response){
-
         const noteData = request.except('_csrf')
         const rules={
             name:'required',
@@ -94,8 +93,8 @@ class NotesController {
 
         const id = request.param('id');
         const note = yield Note.find(id);
-        note.name = request.input('name'); 
-        note.content = request.input('content');
+        note.name = noteData.name; 
+        note.content = noteData.content;
         yield note.save();
         response.redirect('/notes');
     }
@@ -106,6 +105,93 @@ class NotesController {
 
         yield note.delete();
         response.redirect('/notes');
+    }
+
+    * ajaxDelete(request, response) {
+        
+        const id = request.param('id');
+        const note = yield Note.find(id);
+
+        if (note) {
+            if (request.currentUser.id != note.user_id) {
+                response.unauthorized('Access denied.')
+                return
+            }
+
+            yield note.delete()
+            response.ok({
+                success: true
+            })
+            return
+        }
+        response.notFound('No note');
+    }
+
+  * ajaxEdit(request,response){
+      const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
+        const noteData = request.except('_csrf')
+        console.log(noteData);
+        const rules={
+            name:'required',
+            content:'required',
+        }
+        const validation = yield Validator.validateAll(noteData, rules);
+        if(validation.fails()){
+            yield request
+                .withAll()
+                .andWith({errors: validation.messages()})
+                .flash()
+            response.redirect('back');
+            return
+        }
+
+        const id = request.param('id');
+        const note = yield Note.find(id);
+
+        if(note){
+            if(request.currentUser.id != note.user_id) {
+                response.unauthorized('Access denied.')
+                return
+            }
+            note.name = noteData.name; 
+            note.content = noteData.content;
+            yield note.save();
+            response.ok({
+                success: true   
+            })
+            return
+        }
+    }
+
+  * ajaxCreate(request,response){
+      const isLoggedIn = yield request.auth.check()
+        if (!isLoggedIn) {
+            response.redirect('/loginSignUp')
+        }
+        const noteData = request.except('_csrf')
+        const rules={
+            name:'required',
+            content:'required',
+        }
+
+        const validation = yield Validator.validateAll(noteData, rules);
+
+        if(validation.fails()){
+            yield request
+                .withAll()
+                .andWith({errors: validation.messages()})
+                .flash()
+            response.redirect('back');
+            return
+        }
+        noteData.user_id = request.currentUser.id;
+        const note = yield Note.create(noteData)
+        response.ok({
+                success: true   
+        })
     }
 }
 

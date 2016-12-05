@@ -65,6 +65,10 @@ body{
 .form-control{border: none;}
 .capitalize{text-transform: uppercase;}
 .dropdown:hover .dropdown-menu {display: block;}
+.help-block-style{
+    color:darkred;
+    font-size:18px;
+}
 ::-webkit-scrollbar {
     width: 10px;
     background-color: transparent;
