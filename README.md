@@ -321,7 +321,7 @@ Visual Studio Code + Adonis.js + Node.js + Express Admin
   12. A Teendők nem csak az "Edit oldalon szerkeszthetőek", hanem ha a ceruza elemre kattintunk, felugrik egy ablak
   13. A Kategóriák neve is szerkeszthető, ha a "Change Category Name" gombra kattintunk --> lesz egy felugró ablak --> majd Save gomb
   
-#### 6. Irodalomjegyzék:
+#### 7. Irodalomjegyzék:
 
 http://webprogramozas.inf.elte.hu/alkfejl.php
 
