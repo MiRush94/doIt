@@ -33,7 +33,3 @@ Route.group('ajax', function () {
   Route.post('/createNote', 'NotesController.ajaxCreate')
   Route.post('/createTodo', 'TodosController.ajaxCreate')
 }).prefix('/ajax')
-
-// Route.group('ajax', function () {
-//   Route.delete('/deleteTodo/:id', 'TodosController.ajaxDelete')
-// }).prefix('/ajax')

@@ -27,10 +27,10 @@ function updateClock ( )
 
 		// Compose the string for display
 		var currentTimeString = currentHours + ":" + currentMinutes + ":" + currentSeconds + " " + timeOfDay;
-		
-		
+
+
 		$("#clock").html(currentTimeString);
-   	  	
+
  }
 
 function deleteNote(id){
@@ -133,7 +133,7 @@ function createItem(item, location, data){
     const headers = {
         'csrf-token': $('[name="_csrf"]').val()
     }
-    
+
     $.ajax({
         type: "POST",
         url: "/ajax/" + item,
@@ -153,7 +153,7 @@ function editItem(id, item, location, data){
     const headers = {
         'csrf-token': $('[name="_csrf"]').val()
     }
-    
+
     $.ajax({
         type: "POST",
         url: "/ajax/" + item + "/" + id,
