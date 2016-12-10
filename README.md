@@ -279,7 +279,22 @@ Visual Studio Code + Adonis.js + Node.js + Express Admin
 
 #### 4. Tesztelés
 
-#### 5. Felhasználói dokumentáció
+#### 5. Progresszív fejlesztés (javascript használata)
+##### Megvalósított funkciók
+  + **Ajax-os funkciók**
+    + deleteTodo(id) : az adott todo (teendő) törlése
+    + deleteNote(id) : az adott note (jegyzet) törlése
+    + deleteCategory(id) : az adott category (kategória) törlése
+    + editTodo(id) : az adott todo (teendő) módosítása
+    + editNote(id) : az adott note (jegyzet) módosítása
+    + createTodo() : egy új todo (teendő) létrehozása
+    + createNote() : egy új note (jegyzet) létrehozása
+   
+  + **Más javascriptes funkcionalitások**
+    + A lap allján található egy óra, ami az épp aktuális időt mutatja
+    + Egy javascript funkció segítségével mutatjuk meg a felhasználónak, hogy épp melyik oldal aktív ( éppen hol tartózkodik)
+
+#### 6. Felhasználói dokumentáció
 
 **Futtatáshoz szükséges operációs rendszer:** Tetszőleges, de a Windows ajánlott
 **A futtatáshoz szükséges hardver:** Operációs rendszerek szerint megadva
@@ -306,7 +321,7 @@ Visual Studio Code + Adonis.js + Node.js + Express Admin
   12. A Teendők nem csak az "Edit oldalon szerkeszthetőek", hanem ha a ceruza elemre kattintunk, felugrik egy ablak
   13. A Kategóriák neve is szerkeszthető, ha a "Change Category Name" gombra kattintunk --> lesz egy felugró ablak --> majd Save gomb
   
-#### 6. Irodalomjegyzék:
+#### 7. Irodalomjegyzék:
 
 http://webprogramozas.inf.elte.hu/alkfejl.php
 
