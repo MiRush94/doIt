@@ -77,7 +77,7 @@ function editTodo(id) {
     data.category_id = $category_id.val().trim();
     data.id = id;
     if(data.title.length > 2 && data.category_id.length > 0){
-        editCreateItem(id,'editTodo','/todos', data)
+        editItem(id,'editTodo','/todos', data)
     }else{
         this.event.preventDefault();
         $('.help-block').text('Title or category is empty, or you have not typed enough characters');
@@ -92,7 +92,7 @@ function editNote(id){
     data.content = $content.val().trim();
     data.id = id;
     if(data.name.length > 2 && data.content.length > 2){
-        editCreateItem(id, 'editNote','/notes', data)
+        editItem(id, 'editNote','/notes', data)
     }else{
         this.event.preventDefault();
         $('.help-block').text('Name or content is empty, or you have not typed enough characters');

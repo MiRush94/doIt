@@ -188,11 +188,9 @@ class TodosController {
         const validation = yield Validator.validateAll(todoData, rules);
 
         if(validation.fails()){
-            yield request
-                .withAll()
-                .andWith({errors: validation.messages()})
-                .flash()
-            response.redirect('back');
+            response.ok({
+                success: false   
+            })
             return
         }
 
@@ -225,19 +223,21 @@ class TodosController {
             category_id:'required',
         }
 
-        const validation = yield Validator.validateAll(noteData, rules);
+        const validation = yield Validator.validateAll(todoData, rules);
 
         if(validation.fails()){
             response.ok({
                 success: false   
-        })
+            })
             return
         }
+
         todoData.user_id = request.currentUser.id;
         const todo = yield Todo.create(todoData)
         response.ok({
                 success: true   
         })
+        console.log(todo);
     }
 }
 

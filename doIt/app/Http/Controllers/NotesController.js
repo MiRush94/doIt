@@ -164,6 +164,7 @@ class NotesController {
             })
             return
         }
+        response.notFound('No Note');
     }
 
   * ajaxCreate(request,response){
@@ -180,11 +181,9 @@ class NotesController {
         const validation = yield Validator.validateAll(noteData, rules);
 
         if(validation.fails()){
-            yield request
-                .withAll()
-                .andWith({errors: validation.messages()})
-                .flash()
-            response.redirect('back');
+            response.ok({
+                success: false   
+            })
             return
         }
         noteData.user_id = request.currentUser.id;
